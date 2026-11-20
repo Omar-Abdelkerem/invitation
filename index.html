@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sophia &amp; Alexander — Wedding Invitation</title>
+  <meta name="description" content="You are joyfully invited to celebrate the wedding of Sophia &amp; Alexander on June 19, 2027. Tap to view details &amp; RSVP." />
+
+  <!-- =====================================================================
+       WHATSAPP OPEN GRAPH METADATA
+       IMPORTANT: After deploying to Vercel, replace `YOUR-SITE.vercel.app`
+       with your real Vercel URL so WhatsApp shows the preview image!
+       ===================================================================== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sophia &amp; Alexander — Wedding Invitation" />
+  <meta property="og:description" content="You are joyfully invited to celebrate our wedding on Saturday, June 19, 2027 at Villa Aurelia. Tap to RSVP!" />
+  <meta property="og:url" content="https://YOUR-SITE.vercel.app/" />
+  <meta property="og:image" content="https://YOUR-SITE.vercel.app/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://YOUR-SITE.vercel.app/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X Preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sophia &amp; Alexander — Wedding Invitation" />
+  <meta name="twitter:description" content="You are joyfully invited to celebrate our wedding on Saturday, June 19, 2027." />
+  <meta name="twitter:image" content="https://YOUR-SITE.vercel.app/og-image.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --ivory: #FFFDF9;
+      --gold: #B89352;
+      --gold-dark: #8F6D34;
+      --border: rgba(184, 147, 82, 0.35);
+      --ink: #2C241E;
+      --muted: #6E6053;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: radial-gradient(circle at top, #FFFDF9 0%, #F3ECE0 100%);
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+    }
+
+    .card {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      padding: 48px 32px;
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(44, 36, 30, 0.08);
+      text-align: center;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 10px;
+      border: 1px solid rgba(184, 147, 82, 0.22);
+      border-radius: 10px;
+      pointer-events: none;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 8vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    .amp {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .subtitle {
+      margin: 12px 0 24px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .details {
+      padding: 18px 0;
+      margin: 0 0 24px;
+      border-top: 1px solid #E8DEC9;
+      border-bottom: 1px solid #E8DEC9;
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .details strong {
+      color: var(--gold-dark);
+      font-weight: 500;
+    }
+
+    .maps-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 0.74rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+    }
+
+    .rsvp-title {
+      margin: 0 0 16px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 500;
+    }
+
+    .name-input {
+      width: 100%;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      border: 1px solid #E2D6C3;
+      border-radius: 8px;
+      background: var(--cream);
+      font-family: inherit;
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    .name-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: var(--ivory);
+    }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .btn {
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: 1px solid transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 200ms ease, opacity 200ms ease;
+    }
+
+    .btn:active { transform: scale(0.98); }
+
+    .btn-yes {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #FFFDF9;
+    }
+
+    .btn-no {
+      background: var(--cream);
+      border-color: var(--border);
+      color: var(--muted);
+    }
+
+    .result {
+      margin-top: 22px;
+      padding: 20px 16px;
+      border-radius: 12px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+      display: none;
+    }
+
+    .result.show { display: block; }
+
+    .result h2 {
+      margin: 0 0 8px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.65rem;
+      font-weight: 500;
+      color: var(--gold-dark);
+    }
+
+    .result p {
+      margin: 0 0 14px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .wa-confirm {
+      background: #25D366;
+      color: #ffffff;
+      width: 100%;
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 440px) {
+      .card { padding: 36px 20px; }
+      .btn-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="kicker">Together With Our Families</p>
+    <h1>Sophia <span class="amp">&amp;</span> Alexander</h1>
+    <p class="subtitle">joyfully invite you to celebrate our wedding</p>
+
+    <div class="details">
+      <div><strong>Date:</strong> Saturday, June 19, 2027 · 4:30 PM</div>
+      <div><strong>Venue:</strong> Villa Aurelia, Lake Como</div>
+      <a
+        class="maps-link"
+        href="https://www.google.com/maps/search/?api=1&query=Villa+Aurelia+Lake+Como"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps &rarr;
+      </a>
+    </div>
+
+    <div id="rsvpBox">
+      <h2 class="rsvp-title">Will you attend?</h2>
+      <input
+        type="text"
+        id="guestName"
+        class="name-input"
+        placeholder="Your name (optional)"
+        maxlength="80"
+      />
+      <div class="btn-row">
+        <button type="button" class="btn btn-yes" id="btnYes">YES ❤️</button>
+        <button type="button" class="btn btn-no" id="btnNo">NO</button>
+      </div>
+    </div>
+
+    <div class="result" id="resultBox" aria-live="polite">
+      <h2 id="resultHeading"></h2>
+      <p id="resultText"></p>
+      <a id="waReplyBtn" class="btn wa-confirm" href="#" target="_blank" rel="noopener noreferrer">
+        Send Reply on WhatsApp
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Optional: put your WhatsApp number with country code (no +, no spaces) e.g. "201012345678"
+    const COUPLE_WHATSAPP_NUMBER = '';
+
+    const guestNameInput = document.getElementById('guestName');
+    const resultBox = document.getElementById('resultBox');
+    const resultHeading = document.getElementById('resultHeading');
+    const resultText = document.getElementById('resultText');
+    const waReplyBtn = document.getElementById('waReplyBtn');
+
+    function handleAnswer(answer) {
+      const name = guestNameInput.value.trim();
+      const greeting = name ? `, ${name}` : '';
+
+      if (answer === 'yes') {
+        resultHeading.textContent = `We can't wait to celebrate with you${greeting}! ❤️`;
+        resultText.textContent = 'Your attendance means the world to us. See you on June 19, 2027!';
+      } else {
+        resultHeading.textContent = `Thank you for letting us know${greeting}`;
+        resultText.textContent = 'We will miss you dearly on our special day and send you all our love.';
+      }
+
+      const waMessage =
+        answer === 'yes'
+          ? `Hi! ${name ? 'This is ' + name + '. ' : ''}YES ❤️ — I will attend Sophia & Alexander's wedding!`
+          : `Hi! ${name ? 'This is ' + name + '. ' : ''}Sorry, I won't be able to attend Sophia & Alexander's wedding. Wishing you both the best!`;
+
+      const base = COUPLE_WHATSAPP_NUMBER
+        ? `https://wa.me/${COUPLE_WHATSAPP_NUMBER}`
+        : 'https://wa.me/';
+      waReplyBtn.href = `${base}?text=${encodeURIComponent(waMessage)}`;
+
+      resultBox.classList.add('show');
+    }
+
+    document.getElementById('btnYes').addEventListener('click', () => handleAnswer('yes'));
+    document.getElementById('btnNo').addEventListener('click', () => handleAnswer('no'));
+
+    // Auto-handle direct WhatsApp links: ?rsvp=yes or ?rsvp=no
+    const params = new URLSearchParams(window.location.search);
+    const preset = (params.get('rsvp') || '').toLowerCase();
+    if (preset === 'yes' || preset === 'no') {
+      handleAnswer(preset);
+    }
+  </script>
+</body>
+</html>
